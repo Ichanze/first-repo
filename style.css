@@ -1,0 +1,154 @@
+/* ==============================
+   General Styles
+============================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page visibility */
+.page {
+    padding: 60px 20px;
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+h1, h2 {
+    color: #0c4e8f;
+}
+
+p {
+    color: #669dd3;
+}
+
+
+nav {
+    background-color: #0d6efd; /* Bootstrap primary blue */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+nav h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #f00606; /* Bootstrap warning yellow */
+}
+
+nav .user-menu {
+    position: relative;
+}
+
+nav .user-menu span {
+    cursor: pointer;
+}
+
+nav .user-menu .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    color: #343a40;
+    border-radius: 5px;
+    overflow: hidden;
+    display: none;
+    min-width: 150px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+nav .user-menu:hover .dropdown {
+    display: block;
+}
+
+nav .user-menu .dropdown a {
+    display: block;
+    padding: 10px;
+    color: #343a40;
+    text-decoration: none;
+}
+
+nav .user-menu .dropdown a:hover {
+    background-color: #f8f9fa;
+}
+
+/* ==============================
+   Buttons
+============================== */
+button {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0b5ed7;
+}
+
+/* ==============================
+   Role-based visibility
+============================== */
+/* logged-in vs logged-out */
+body.not-authenticated .role-logged-in {
+    display: none;
+}
+
+body.authenticated .role-logged-out {
+    display: none;
+}
+
+/* admin-only elements in NAV (hide until admin) */
+nav .role-admin {
+    display: none;
+}
+
+body.is-admin nav .role-admin {
+    display: block;
+}
+
+/* ==============================
+   Forms & Inputs (future use)
+============================== */
+input, select, textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 5px 0 15px 0;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+/* ==============================
+   Mobile Responsive
+============================== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+}
